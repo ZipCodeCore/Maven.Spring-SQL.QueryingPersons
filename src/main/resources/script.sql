@@ -37,10 +37,12 @@ FROM movies
 WHERE genre = 'Horror' or genre = 'Documentary';
 
 SELECT AVG(imdb_score), MIN(imdb_score), MAX(imdb_score)
-FROM movies;
+FROM movies
+GROUP BY Rating;
 
 SELECT AVG(imdb_score), MIN(imdb_score), MAX(imdb_score)
 FROM movies
+GROUP BY Rating;
 HAVING COUNT(*) > 1;
 
 DELETE FROM movies
