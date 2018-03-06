@@ -1,0 +1,2 @@
+SELECT p.first_name, h.address, p.birthday FROM people p INNER JOIN homes h on (p.home_id = h.id) WHERE p.birthday IS NOT NULL ORDER BY p.MONTH(birthday);
+SELECT * FROM people p INNER JOIN homes h on (p.home_id = h.id);
