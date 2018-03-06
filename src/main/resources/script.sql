@@ -45,6 +45,7 @@ FROM movies
 GROUP BY Rating;
 HAVING COUNT(*) > 1;
 
+
 DELETE FROM movies
 WHERE rating = 'R';
 
