@@ -1,10 +1,4 @@
 
-INSERT INTO homes (address, homenumber) VALUES ('36 E. Bayberry Rd.Savannah, GA 31404', '565-6895');
-INSERT INTO homes (address, homenumber) VALUES ('11 Essex Dr.Farmingdale, NY 11735', '454-4544');
-INSERT INTO homes (address, homenumber) VALUES ('920 Arlington Street Clifton, NJ 07011', '985-4515');
-INSERT INTO homes (address, homenumber) VALUES ('234 High Street, PA 19159 ', '267-3940');
-
-
 INSERT INTO movies (ID, TITLE, RUNTIME, GENRE, IMDB_SCORE, RATING)
 VALUES ('Howard The Duck', 110, 'Sci-Fi', 4.6, 'PG');
 INSERT INTO movies (TITLE, RUNTIME, GENRE, IMDB_SCORE, RATING)
@@ -22,5 +16,42 @@ VALUES ('Goodfellas', 92, 'Drama', 8.7, 'R');
 INSERT INTO movies (TITLE, RUNTIME, GENRE, IMDB_SCORE, RATING)
 VALUES ('Catch Me If You Can', 141, 'Drama', 8.1, 'PG-13');
 
+SELECT genre
+FROM movies
+WHERE genre = 'Sci-Fi'
 
-SELECT * FROM people;
+SELECT IMDB_SCORE
+FROM movies
+WHERE IMDB_SCORE >= 6.5
+
+SELECT TITLE, RUNTIME, RATING
+FROM movies
+WHERE RATING = 'G' OR RATING = 'PG' AND RUNTIME < 100
+
+SELECT GENRE, RUNTIME, IMDB_SCORE, TITLE
+FROM movies
+WHERE IMDB_SCORE < 7.5
+GROUP BY GENRE, RUNTIME;
+
+UPDATE movies
+SET RATING = 'R'
+WHERE TITLE = 'Starship Troopers';
+SELECT TITLE, RATING
+FROM movies;
+
+
+SELECT AVG (IMDB_SCORE), MAX(IMDB_SCORE), MIN(IMDB_SCORE)
+FROM movies
+GROUP by RATING;
+
+SELECT AVG (IMDB_SCORE), MAX(IMDB_SCORE), MIN(IMDB_SCORE)
+FROM movies
+GROUP by RATING HAVING COUNT(*) > 1;
+
+DELETE FROM movies
+WHERE RATING = 'R';
+
+
+SELECT *
+FROM movies
+WHERE IMDB_SCORE;
