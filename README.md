@@ -64,8 +64,7 @@ AND id = 4;
 ```
 
 ```SQL
-UPDATE people SET mobile = '333-3333', last_name = 'Johnson' 
-WHERE first_name = 'Noelle' OR first_name = 'Raj';
+ 
 ```
 
 #### Basic Functions
